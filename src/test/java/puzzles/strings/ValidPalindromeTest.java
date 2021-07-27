@@ -1,6 +1,7 @@
-package puzzles;
+package puzzles.strings;
 
 import org.junit.jupiter.api.Test;
+import puzzles.strings.ValidPalindrome;
 
 import static org.junit.jupiter.api.Assertions.*;
 

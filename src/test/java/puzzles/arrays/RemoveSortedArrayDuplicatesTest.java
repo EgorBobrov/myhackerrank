@@ -1,4 +1,4 @@
-package puzzles;
+package puzzles.arrays;
 
 import org.junit.jupiter.api.Test;
 
