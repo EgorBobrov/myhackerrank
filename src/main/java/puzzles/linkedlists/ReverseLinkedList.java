@@ -3,22 +3,6 @@ package puzzles.linkedlists;
 // https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/560/
 // Given the head of a singly linked list, reverse the list, and return the reversed list.
 public class ReverseLinkedList {
-      public static class ListNode {
-          int val;
-          ListNode next;
-
-          ListNode() {
-          }
-
-          ListNode(int val) {
-              this.val = val;
-          }
-
-          ListNode(int val, ListNode next) {
-              this.val = val;
-              this.next = next;
-          }
-      }
 
     public static ListNode reverseList(ListNode head) {
         // The most obvious way to reverse a singly linked list is to go from start to finish,
