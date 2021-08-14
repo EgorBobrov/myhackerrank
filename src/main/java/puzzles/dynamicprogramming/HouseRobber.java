@@ -11,7 +11,7 @@ public class HouseRobber {
         // Basically, this issue is "select maximum sum of non-adjacent values from an array".
         // To do it, we can apply Tabulation: saving current value and creating new value at each step
         // based on previous value(s).
-        int[] tabulation = new int[nums.length];
+        int[] tabulation = new int[2];
         // At the first step, we have only the first value.
         tabulation[0] = nums[0];
         // At the next step, we can choose to keep the previous value or discard it and take new one, if it's bigger.
@@ -19,9 +19,11 @@ public class HouseRobber {
         // Then, we iterate over all other elements of the array. At each step, we analyze if we want to add this value
         // to our rolling sum from two steps before or discard it and skip it, keeping our rolling sum from one step before.
         for(int i = 2; i < nums.length ; i++) {
-            tabulation[i] = Math.max(nums[i] + tabulation[i - 2], tabulation[i - 1]);
+            int thisStepValue = Math.max(nums[i] + tabulation[0], tabulation[1]);
+            tabulation[0] = tabulation[1];
+            tabulation[1] = thisStepValue;
         }
-        return tabulation[tabulation.length - 1];
+        return tabulation[1];
 
     }
 
