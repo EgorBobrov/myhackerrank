@@ -24,7 +24,6 @@ public class HouseRobber {
             tabulation[1] = thisStepValue;
         }
         return tabulation[1];
-
     }
 
 }
