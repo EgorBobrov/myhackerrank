@@ -29,13 +29,10 @@ public class LongestPalindromicSubstring {
         return result;
     }
 
-    // No matter how hard I tried, I simply couldn't make the palindrome algorithm work
-    // without using substring. It should be very simple, but I spent way too much time on it
-    // without any luck. I have to leave it like this, spending time and memory on creating substrings.
     private static boolean isPalindrome(String s, int startInclusive, int endExclusive) {
-        String substring = s.substring(startInclusive, endExclusive);
-        for (int i = 0; i < substring.length() / 2; i++) {
-            if (substring.charAt(i) != substring.charAt(substring.length() - i - 1)) return false;
+        int count = 0;
+        for (int i = startInclusive; i < ((endExclusive - startInclusive) / 2) + startInclusive; i++) {
+            if (s.charAt(i) != s.charAt(endExclusive - count++ - 1)) return false;
         }
         return true;
     }
