@@ -24,7 +24,7 @@ public class AddTwoNumbers {
         l2 = l2.next;
 
         // we follow the lists while they are both empty...
-        while (l1.next != null && l2.next != null) {
+        while (l1 != null && l2 != null) {
             sumVal = l1.val + l2.val + carry;
             if (sumVal >= 10) {
                 sumVal -= 10;
@@ -39,7 +39,7 @@ public class AddTwoNumbers {
         }
 
         // and then fill the rest of the result:
-        while (l1.next != null) {
+        while (l1 != null) {
             sumVal = l1.val + carry;
             if (sumVal >= 10) {
                 sumVal -= 10;
@@ -52,7 +52,7 @@ public class AddTwoNumbers {
             l1 = l1.next;
         }
 
-        while (l2.next != null) {
+        while (l2 != null) {
             sumVal = l2.val + carry;
             if (sumVal >= 10) {
                 sumVal -= 10;
@@ -66,9 +66,11 @@ public class AddTwoNumbers {
         }
 
         if (carry == 1) {
-            current.next = new ListNode(sumVal);
+            current.next = new ListNode(carry);
         }
-
+        // The algorithm takes O(n + m) time because it visits each node of both lists,
+        // and O(max(n, m)) extra space for storing the result. It could be possible to make it use constant space
+        // by repurposing one of the existing lists.
         return result;
     }
 

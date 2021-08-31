@@ -29,7 +29,7 @@ class AddTwoNumbersTest {
     @Test
     void shouldReturn10009998_for_999999_plus_9999() {
         ListNode l1 = new ListNode(9, new ListNode(9, new ListNode(9,
-                new ListNode(9, new ListNode(9, new ListNode(9))))));
+                new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
         ListNode l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
         ListNode result = AddTwoNumbers.addTwoNumbers(l1, l2);
         assertEquals(8, result.val);
